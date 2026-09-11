@@ -41,7 +41,6 @@
             font-family: 'Vazirmatn', 'Inter', sans-serif;
         }
 
-        /* ===== انیمیشن پس‌زمینه ===== */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -80,7 +79,6 @@
             50% { transform: translate(50px, 50px); }
         }
 
-        /* ===== ذرات شناور ===== */
         .particle {
             position: fixed;
             font-size: 20px;
@@ -101,7 +99,6 @@
             }
         }
 
-        /* ===== هدر ===== */
         header {
             position: fixed;
             top: 0;
@@ -170,7 +167,6 @@
             color: var(--text-primary);
         }
 
-        /* ===== محتوای اصلی ===== */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -189,7 +185,6 @@
             transform: translateY(0);
         }
 
-        /* ===== هیرو ===== */
         .hero {
             text-align: center;
             padding: 40px 0;
@@ -243,7 +238,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* ===== تایپ انیمیشن ===== */
         .typing-container {
             display: inline-block;
             overflow: hidden;
@@ -333,7 +327,6 @@
             color: var(--accent);
         }
 
-        /* ===== انیمیشن اموجی ===== */
         .emoji-anim {
             display: inline-block;
             animation: bounce 2s infinite ease-in-out;
@@ -417,7 +410,6 @@
             50% { opacity: 0.6; transform: scale(0.9); }
         }
 
-        /* ===== دکمه‌های تماس ===== */
         .contact-buttons {
             display: flex;
             gap: 15px;
@@ -485,7 +477,6 @@
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
         }
 
-        /* ===== عنوان بخش‌ها ===== */
         .section-header {
             margin-bottom: 40px;
         }
@@ -532,7 +523,6 @@
             100% { left: 100%; }
         }
 
-        /* ===== مهارت‌ها ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -635,7 +625,6 @@
             text-align: right;
         }
 
-        /* ===== آمار ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -703,7 +692,6 @@
             z-index: 1;
         }
 
-        /* ===== پروژه‌ها ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -783,7 +771,6 @@
             transform: translateY(-2px);
         }
 
-        /* ===== تماس ===== */
         .contact-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -879,7 +866,6 @@
             color: var(--accent);
         }
 
-        /* ===== فوتر ===== */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -892,7 +878,6 @@
             font-size: 14px;
         }
 
-        /* ===== ریسپانسیو ===== */
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
@@ -972,7 +957,6 @@
             }
         }
 
-        /* ===== اسکرول‌بار ===== */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -995,7 +979,6 @@
 
     <div class="bg-animation"></div>
 
-    <!-- ===== هدر ===== -->
     <header>
         <div class="header-content">
             <div class="logo">Amirhossein.dev</div>
@@ -1008,7 +991,6 @@
 
     <div class="container">
 
-        <!-- ===== هیرو ===== -->
         <section class="hero visible">
             <div class="avatar-container">
                 <div class="avatar-ring"></div>
@@ -1048,7 +1030,6 @@
             </div>
         </section>
 
-        <!-- ===== آمار ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۱ — آمار" data-en="01 — STATS">۰۱ — آمار</div>
@@ -1080,7 +1061,6 @@
             </div>
         </section>
 
-        <!-- ===== مهارت‌ها ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۲ — مهارت‌ها" data-en="02 — SKILLS">۰۲ — مهارت‌ها</div>
@@ -1123,7 +1103,6 @@
             </div>
         </section>
 
-        <!-- ===== پروژه‌ها ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۳ — پروژه‌ها" data-en="03 — PROJECTS">۰۳ — پروژه‌ها</div>
@@ -1164,10 +1143,20 @@
                         <span class="project-tag">Clean Code</span>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-icon emoji-star">🌐</div>
+                    <div class="project-title" data-fa="توسعه وب‌سایت" data-en="Web Development">توسعه وب‌سایت</div>
+                    <div class="project-desc" data-fa="طراحی و پیاده‌سازی وب‌سایت‌های واکنش‌گرا با HTML، CSS و JavaScript. تمرکز بر رابط کاربری مدرن، تجربه کاربری روان و کارایی بالا در تمام دستگاه‌ها." data-en="Designing and implementing responsive websites with HTML, CSS and JavaScript. Focused on modern UI, smooth UX and high performance across all devices.">طراحی و پیاده‌سازی وب‌سایت‌های واکنش‌گرا با HTML، CSS و JavaScript. تمرکز بر رابط کاربری مدرن، تجربه کاربری روان و کارایی بالا در تمام دستگاه‌ها.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- ===== تماس ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۴ — تماس" data-en="04 — CONTACT">۰۴ — تماس</div>
@@ -1207,13 +1196,11 @@
 
     </div>
 
-    <!-- ===== فوتر ===== -->
     <footer>
         <p data-fa='ساخته شده با <span class="emoji-heart">❤️</span> توسط امیرحسین حسین‌زاده' data-en='Made with <span class="emoji-heart">❤️</span> by Amirhossein Hosseinzadeh'>ساخته شده با <span class="emoji-heart">❤️</span> توسط امیرحسین حسین‌زاده</p>
     </footer>
 
     <script>
-        // ========== تغییر زبان ==========
         let currentLang = 'fa';
 
         function setLang(lang) {
@@ -1235,22 +1222,18 @@
                 btnEn.classList.remove('active');
             }
             
-            // تغییر همه متن‌ها
             document.querySelectorAll('[data-fa][data-en]').forEach(el => {
                 el.innerHTML = el.getAttribute('data-' + lang);
             });
             
-            // ذخیره در localStorage
             localStorage.setItem('lang', lang);
         }
 
-        // ========== بازیابی زبان قبلی ==========
         const savedLang = localStorage.getItem('lang');
         if (savedLang === 'en') {
             setLang('en');
         }
 
-        // ========== شمارش اعداد ==========
         function animateCounter(el) {
             const target = parseInt(el.getAttribute('data-count'));
             let current = 0;
@@ -1267,7 +1250,6 @@
             }, 16);
         }
 
-        // ========== انیمیشن ظهور بخش‌ها ==========
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1294,7 +1276,6 @@
             observer.observe(section);
         });
 
-        // ========== هدر هنگام اسکرول ==========
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             const currentScroll = window.pageYOffset;
@@ -1308,7 +1289,6 @@
             }
         });
 
-        // ========== ذرات شناور ==========
         const emojis = ['⚡', '🐍', '🤖', '💻', '🚀', '💎', '⭐', '🔥', '✨', '🎮'];
         
         function createParticle() {
@@ -1327,15 +1307,12 @@
             }, 20000);
         }
 
-        // ساخت ذرات اولیه
         for (let i = 0; i < 8; i++) {
             setTimeout(createParticle, i * 500);
         }
 
-        // ساخت ذرات جدید هر ۳ ثانیه
         setInterval(createParticle, 3000);
 
-        // ========== افکت کلیک روی کل صفحه ==========
         document.addEventListener('click', (e) => {
             const sparkle = document.createElement('div');
             sparkle.textContent = '✨';
