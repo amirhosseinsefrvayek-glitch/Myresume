@@ -89,14 +89,8 @@
         }
 
         @keyframes particleFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.15;
-            }
-            50% {
-                transform: translateY(-100px) rotate(180deg);
-                opacity: 0.3;
-            }
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
         }
 
         header {
@@ -236,33 +230,6 @@
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
-        }
-
-        .typing-container {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-left: 3px solid var(--accent);
-            padding-left: 5px;
-            animation: typing 3.5s steps(30) 1s 1 normal both,
-                       blink 0.75s step-end infinite;
-        }
-
-        html[dir="rtl"] .typing-container {
-            border-left: none;
-            border-right: 3px solid var(--accent);
-            padding-left: 0;
-            padding-right: 5px;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--accent); }
         }
 
         .hero h1 {
@@ -697,9 +664,10 @@
             z-index: 1;
         }
 
+        /* ===== پروژه‌ها ===== */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
 
@@ -707,10 +675,13 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 30px;
+            overflow: hidden;
             transition: all 0.3s;
             position: relative;
-            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .project-card::after {
@@ -723,6 +694,7 @@
             background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
             transform: translateX(-100%);
             transition: transform 0.5s;
+            z-index: 10;
         }
 
         .project-card:hover {
@@ -735,9 +707,220 @@
             transform: translateX(0);
         }
 
+        /* ===== پیش‌نمایش زنده ===== */
+        .project-preview {
+            height: 180px;
+            background: linear-gradient(135deg, #0a0e14, #131820);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .preview-game {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* انیمیشن ستاره‌ها */
+        .preview-game::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+                radial-gradient(1px 1px at 60% 70%, #fff, transparent),
+                radial-gradient(1px 1px at 80% 20%, #fff, transparent),
+                radial-gradient(1px 1px at 40% 80%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 50%, #fff, transparent),
+                radial-gradient(1px 1px at 10% 60%, #fff, transparent);
+            opacity: 0.4;
+            animation: starMove 3s linear infinite;
+        }
+
+        @keyframes starMove {
+            from { background-position: 0 0; }
+            to { background-position: -100px 0; }
+        }
+
+        .preview-ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: linear-gradient(180deg, rgba(0, 217, 255, 0.3), #00d9ff);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+
+        .preview-cube {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00d9ff, #7c3aed);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            animation: cubeFloat 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes cubeFloat {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-25px) rotate(180deg); }
+        }
+
+        .preview-obstacle {
+            position: absolute;
+            width: 15px;
+            height: 60px;
+            background: #7c3aed;
+            border-radius: 4px;
+            bottom: 12px;
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+            animation: obstacleMove 3s linear infinite;
+        }
+
+        .preview-obstacle:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes obstacleMove {
+            from { right: -20px; }
+            to { right: 100%; }
+        }
+
+        .preview-score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 8px;
+            padding: 5px 12px;
+            font-size: 11px;
+            color: #00d9ff;
+            font-weight: 700;
+            z-index: 5;
+        }
+
+        /* پیش‌نمایش LifeMap */
+        .preview-lifemap {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #0a0e14, #131820);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .preview-lifemap-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .preview-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d9ff, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+
+        .preview-user-info {
+            flex: 1;
+        }
+
+        .preview-user-name {
+            font-size: 12px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .preview-user-level {
+            font-size: 9px;
+            color: #8b949e;
+        }
+
+        .preview-streak {
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-size: 10px;
+            color: #fbbf24;
+            font-weight: 800;
+        }
+
+        .preview-goal-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .preview-goal-icon {
+            font-size: 14px;
+        }
+
+        .preview-goal-name {
+            flex: 1;
+            font-size: 10px;
+            color: #e6edf3;
+            font-weight: 600;
+        }
+
+        .preview-goal-bar {
+            width: 50px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .preview-goal-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d9ff, #7c3aed);
+            border-radius: 2px;
+            animation: goalFill 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes goalFill {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .preview-goal-pct {
+            font-size: 9px;
+            color: #00d9ff;
+            font-weight: 800;
+            width: 25px;
+            text-align: left;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
         .project-icon {
             font-size: 40px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .project-title {
@@ -745,6 +928,28 @@
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .project-title-text {
+            flex: 1;
+        }
+
+        .project-arrow {
+            font-size: 16px;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover .project-arrow {
+            transform: translateX(5px);
+        }
+
+        html[dir="rtl"] .project-card:hover .project-arrow {
+            transform: translateX(-5px);
         }
 
         .project-desc {
@@ -997,6 +1202,7 @@
 
     <div class="container">
 
+        <!-- ===== هیرو ===== -->
         <section class="hero visible">
             <div class="avatar-container">
                 <div class="avatar-ring"></div>
@@ -1043,6 +1249,7 @@
             </div>
         </section>
 
+        <!-- ===== آمار ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۱ — آمار" data-en="01 — STATS">۰۱ — آمار</div>
@@ -1074,6 +1281,7 @@
             </div>
         </section>
 
+        <!-- ===== مهارت‌ها ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۲ — مهارت‌ها" data-en="02 — SKILLS">۰۲ — مهارت‌ها</div>
@@ -1116,6 +1324,7 @@
             </div>
         </section>
 
+        <!-- ===== پروژه‌ها ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۳ — پروژه‌ها" data-en="03 — PROJECTS">۰۳ — پروژه‌ها</div>
@@ -1170,6 +1379,7 @@
             </div>
         </section>
 
+        <!-- ===== تماس ===== -->
         <section>
             <div class="section-header">
                 <div class="section-number" data-fa="۰۴ — تماس" data-en="04 — CONTACT">۰۴ — تماس</div>
