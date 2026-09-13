@@ -6,11 +6,7 @@
     <title>Amirhossein Hosseinzadeh | Python, Game & Web Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-primary: #0a0e14;
@@ -25,9 +21,7 @@
             --shadow: rgba(0, 217, 255, 0.15);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: var(--bg-primary);
@@ -37,16 +31,12 @@
             overflow-x: hidden;
         }
 
-        html[dir="rtl"] body {
-            font-family: 'Vazirmatn', 'Inter', sans-serif;
-        }
+        html[dir="rtl"] body { font-family: 'Vazirmatn', 'Inter', sans-serif; }
 
         .bg-animation {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
@@ -55,10 +45,8 @@
         .bg-animation::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
+            top: -50%; right: -50%;
+            width: 100%; height: 100%;
             background: radial-gradient(circle, rgba(0, 217, 255, 0.08) 0%, transparent 70%);
             animation: float 20s infinite ease-in-out;
         }
@@ -66,10 +54,8 @@
         .bg-animation::after {
             content: '';
             position: absolute;
-            bottom: -50%;
-            left: -50%;
-            width: 100%;
-            height: 100%;
+            bottom: -50%; left: -50%;
+            width: 100%; height: 100%;
             background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
             animation: float 25s infinite ease-in-out reverse;
         }
@@ -95,9 +81,7 @@
 
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             padding: 20px 40px;
             background: rgba(10, 14, 20, 0.85);
             backdrop-filter: blur(15px);
@@ -157,9 +141,7 @@
             color: white;
         }
 
-        .lang-btn:hover:not(.active) {
-            color: var(--text-primary);
-        }
+        .lang-btn:hover:not(.active) { color: var(--text-primary); }
 
         .container {
             max-width: 1100px;
@@ -174,27 +156,18 @@
             transition: all 0.8s ease;
         }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        section.visible { opacity: 1; transform: translateY(0); }
 
-        .hero {
-            text-align: center;
-            padding: 40px 0;
-            margin-bottom: 60px;
-        }
+        .hero { text-align: center; padding: 40px 0; margin-bottom: 60px; }
 
         .avatar-container {
             position: relative;
-            width: 160px;
-            height: 160px;
+            width: 160px; height: 160px;
             margin: 0 auto 30px;
         }
 
         .avatar {
-            width: 160px;
-            height: 160px;
+            width: 160px; height: 160px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent), var(--accent-2));
             display: flex;
@@ -216,10 +189,7 @@
 
         .avatar-ring {
             position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
+            top: -8px; left: -8px; right: -8px; bottom: -8px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
             animation: rotate 4s linear infinite;
@@ -299,95 +269,48 @@
             color: var(--accent);
         }
 
-        .emoji-anim {
-            display: inline-block;
-            animation: bounce 2s infinite ease-in-out;
-        }
+        .emoji-anim { display: inline-block; animation: bounce 2s infinite ease-in-out; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
+        .emoji-spin { display: inline-block; animation: spinSlow 4s infinite linear; }
+        @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        .emoji-spin {
-            display: inline-block;
-            animation: spinSlow 4s infinite linear;
-        }
-
-        @keyframes spinSlow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .emoji-shake {
-            display: inline-block;
-            animation: shake 2s infinite ease-in-out;
-        }
-
+        .emoji-shake { display: inline-block; animation: shake 2s infinite ease-in-out; }
         @keyframes shake {
             0%, 100% { transform: rotate(0deg); }
             25% { transform: rotate(-15deg); }
             75% { transform: rotate(15deg); }
         }
 
-        .emoji-wave {
-            display: inline-block;
-            animation: wave 2.5s infinite ease-in-out;
-            transform-origin: 70% 70%;
-        }
-
+        .emoji-wave { display: inline-block; animation: wave 2.5s infinite ease-in-out; transform-origin: 70% 70%; }
         @keyframes wave {
             0%, 100% { transform: rotate(0deg); }
             25% { transform: rotate(20deg); }
             75% { transform: rotate(-20deg); }
         }
 
-        .emoji-rocket {
-            display: inline-block;
-            animation: rocketFly 3s infinite ease-in-out;
-        }
-
+        .emoji-rocket { display: inline-block; animation: rocketFly 3s infinite ease-in-out; }
         @keyframes rocketFly {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-8px) rotate(5deg); }
         }
 
-        .emoji-heart {
-            display: inline-block;
-            animation: heartBeat 1.5s infinite ease-in-out;
-        }
+        .emoji-heart { display: inline-block; animation: heartBeat 1.5s infinite ease-in-out; }
+        @keyframes heartBeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
 
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-        }
-
-        .emoji-fire {
-            display: inline-block;
-            animation: fireFlicker 0.8s infinite alternate;
-        }
-
+        .emoji-fire { display: inline-block; animation: fireFlicker 0.8s infinite alternate; }
         @keyframes fireFlicker {
             from { transform: scale(1) rotate(-3deg); filter: brightness(1); }
             to { transform: scale(1.1) rotate(3deg); filter: brightness(1.3); }
         }
 
-        .emoji-star {
-            display: inline-block;
-            animation: starTwinkle 1.5s infinite ease-in-out;
-        }
-
+        .emoji-star { display: inline-block; animation: starTwinkle 1.5s infinite ease-in-out; }
         @keyframes starTwinkle {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.6; transform: scale(0.9); }
         }
 
-        .contact-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .contact-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
         .contact-btn {
             display: inline-flex;
@@ -411,20 +334,15 @@
         .contact-btn::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
             background: radial-gradient(circle, rgba(0, 217, 255, 0.3) 0%, transparent 70%);
             transform: translate(-50%, -50%);
             transition: width 0.5s, height 0.5s;
             border-radius: 50%;
         }
 
-        .contact-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
+        .contact-btn:hover::before { width: 300px; height: 300px; }
 
         .contact-btn:hover {
             transform: translateY(-3px);
@@ -433,9 +351,7 @@
             color: var(--accent);
         }
 
-        .contact-btn .icon {
-            font-size: 18px;
-        }
+        .contact-btn .icon { font-size: 18px; }
 
         .contact-btn.telegram:hover {
             border-color: #0088cc;
@@ -449,9 +365,7 @@
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
         }
 
-        .section-header {
-            margin-bottom: 40px;
-        }
+        .section-header { margin-bottom: 40px; }
 
         .section-number {
             display: inline-block;
@@ -482,10 +396,8 @@
         .section-title-line::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
             animation: shimmer 3s infinite;
         }
@@ -514,10 +426,8 @@
         .skill-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 4px;
-            height: 100%;
+            top: 0; right: 0;
+            width: 4px; height: 100%;
             background: linear-gradient(180deg, var(--accent), var(--accent-2));
             opacity: 0;
             transition: opacity 0.3s;
@@ -529,14 +439,9 @@
             box-shadow: 0 15px 40px var(--shadow);
         }
 
-        .skill-card:hover::before {
-            opacity: 1;
-        }
+        .skill-card:hover::before { opacity: 1; }
 
-        .skill-icon {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
+        .skill-icon { font-size: 36px; margin-bottom: 15px; }
 
         .skill-name {
             font-size: 17px;
@@ -572,10 +477,8 @@
         .skill-bar-fill::after {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 30px;
-            height: 100%;
+            top: 0; right: 0;
+            width: 30px; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5));
             animation: slide 2s infinite;
         }
@@ -593,9 +496,7 @@
             text-align: left;
         }
 
-        html[dir="rtl"] .skill-level {
-            text-align: right;
-        }
+        html[dir="rtl"] .skill-level { text-align: right; }
 
         .stats-grid {
             display: grid;
@@ -617,19 +518,15 @@
         .stat-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: conic-gradient(from 0deg, transparent, rgba(0, 217, 255, 0.1), transparent);
             opacity: 0;
             transition: opacity 0.3s;
             animation: rotate 4s linear infinite;
         }
 
-        .stat-card:hover::before {
-            opacity: 1;
-        }
+        .stat-card:hover::before { opacity: 1; }
 
         .stat-card:hover {
             transform: translateY(-5px);
@@ -637,11 +534,7 @@
             box-shadow: 0 15px 40px var(--shadow);
         }
 
-        .stat-icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-            display: block;
-        }
+        .stat-icon { font-size: 30px; margin-bottom: 10px; display: block; }
 
         .stat-number {
             font-size: 42px;
@@ -687,9 +580,7 @@
         .project-card::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
             transform: translateX(-100%);
@@ -703,9 +594,19 @@
             box-shadow: 0 15px 40px var(--shadow);
         }
 
-        .project-card:hover::after {
-            transform: translateX(0);
+        .project-card:hover::after { transform: translateX(0); }
+
+        /* پدینگ برای کارت‌های بدون پیش‌نمایش */
+        .project-card > .project-icon,
+        .project-card > .project-title,
+        .project-card > .project-desc,
+        .project-card > .project-tags {
+            margin-left: 30px;
+            margin-right: 30px;
         }
+
+        .project-card > .project-icon { margin-top: 30px; margin-bottom: 15px; }
+        .project-card > .project-tags { margin-bottom: 30px; }
 
         /* ===== پیش‌نمایش زنده ===== */
         .project-preview {
@@ -726,7 +627,6 @@
             overflow: hidden;
         }
 
-        /* انیمیشن ستاره‌ها */
         .preview-game::before {
             content: '';
             position: absolute;
@@ -739,19 +639,11 @@
                 radial-gradient(1px 1px at 90% 50%, #fff, transparent),
                 radial-gradient(1px 1px at 10% 60%, #fff, transparent);
             opacity: 0.4;
-            animation: starMove 3s linear infinite;
-        }
-
-        @keyframes starMove {
-            from { background-position: 0 0; }
-            to { background-position: -100px 0; }
         }
 
         .preview-ground {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 12px;
             background: linear-gradient(180deg, rgba(0, 217, 255, 0.3), #00d9ff);
             box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
@@ -783,9 +675,7 @@
             animation: obstacleMove 3s linear infinite;
         }
 
-        .preview-obstacle:nth-child(2) {
-            animation-delay: 1.5s;
-        }
+        .preview-obstacle:nth-child(3) { animation-delay: 1.5s; }
 
         @keyframes obstacleMove {
             from { right: -20px; }
@@ -794,8 +684,7 @@
 
         .preview-score {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 10px; left: 10px;
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 217, 255, 0.3);
@@ -807,7 +696,6 @@
             z-index: 5;
         }
 
-        /* پیش‌نمایش LifeMap */
         .preview-lifemap {
             position: absolute;
             inset: 0;
@@ -839,9 +727,7 @@
             box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
         }
 
-        .preview-user-info {
-            flex: 1;
-        }
+        .preview-user-info { flex: 1; }
 
         .preview-user-name {
             font-size: 12px;
@@ -850,10 +736,7 @@
             line-height: 1;
         }
 
-        .preview-user-level {
-            font-size: 9px;
-            color: #8b949e;
-        }
+        .preview-user-level { font-size: 9px; color: #8b949e; }
 
         .preview-streak {
             background: rgba(251, 191, 36, 0.15);
@@ -875,9 +758,7 @@
             padding: 6px 10px;
         }
 
-        .preview-goal-icon {
-            font-size: 14px;
-        }
+        .preview-goal-icon { font-size: 14px; }
 
         .preview-goal-name {
             flex: 1;
@@ -898,12 +779,6 @@
             height: 100%;
             background: linear-gradient(90deg, #00d9ff, #7c3aed);
             border-radius: 2px;
-            animation: goalFill 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes goalFill {
-            0% { opacity: 0.6; }
-            100% { opacity: 1; }
         }
 
         .preview-goal-pct {
@@ -914,14 +789,9 @@
             text-align: left;
         }
 
-        .project-content {
-            padding: 25px;
-        }
+        .project-content { padding: 25px; }
 
-        .project-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+        .project-icon { font-size: 40px; margin-bottom: 15px; }
 
         .project-title {
             font-size: 19px;
@@ -934,9 +804,7 @@
             gap: 10px;
         }
 
-        .project-title-text {
-            flex: 1;
-        }
+        .project-title-text { flex: 1; }
 
         .project-arrow {
             font-size: 16px;
@@ -944,13 +812,8 @@
             transition: transform 0.3s;
         }
 
-        .project-card:hover .project-arrow {
-            transform: translateX(5px);
-        }
-
-        html[dir="rtl"] .project-card:hover .project-arrow {
-            transform: translateX(-5px);
-        }
+        .project-card:hover .project-arrow { transform: translateX(5px); }
+        html[dir="rtl"] .project-card:hover .project-arrow { transform: translateX(-5px); }
 
         .project-desc {
             font-size: 14px;
@@ -994,18 +857,13 @@
         .contact-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; right: -50%;
+            width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
             animation: float 15s infinite;
         }
 
-        .contact-content {
-            position: relative;
-            z-index: 1;
-        }
+        .contact-content { position: relative; z-index: 1; }
 
         .contact-title {
             font-size: 28px;
@@ -1052,17 +910,10 @@
             box-shadow: 0 15px 40px var(--shadow);
         }
 
-        .contact-link-icon {
-            font-size: 24px;
-        }
+        .contact-link-icon { font-size: 24px; }
 
-        .contact-link-info {
-            text-align: right;
-        }
-
-        html[dir="ltr"] .contact-link-info {
-            text-align: left;
-        }
+        .contact-link-info { text-align: right; }
+        html[dir="ltr"] .contact-link-info { text-align: left; }
 
         .contact-link-label {
             font-size: 12px;
@@ -1071,10 +922,7 @@
             margin-bottom: 2px;
         }
 
-        .contact-link-value {
-            font-size: 15px;
-            color: var(--accent);
-        }
+        .contact-link-value { font-size: 15px; color: var(--accent); }
 
         footer {
             text-align: center;
@@ -1083,107 +931,39 @@
             margin-top: 60px;
         }
 
-        footer p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
+        footer p { color: var(--text-secondary); font-size: 14px; }
 
         @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-
-            .container {
-                padding: 100px 20px 40px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-title {
-                font-size: 15px;
-                gap: 5px;
-            }
-
-            .hero-description {
-                font-size: 14px;
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .section-number {
-                font-size: 12px;
-            }
-
-            .stat-number {
-                font-size: 32px;
-            }
-
-            .contact-section {
-                padding: 35px 20px;
-            }
-
-            .contact-title {
-                font-size: 22px;
-            }
-
-            .logo {
-                font-size: 16px;
-            }
-
-            .lang-btn {
-                padding: 6px 14px;
-                font-size: 12px;
-            }
-
-            section {
-                margin-bottom: 50px;
-            }
-
-            .contact-btn {
-                padding: 12px 20px;
-                font-size: 14px;
-            }
-
-            .contact-link {
-                padding: 14px 20px;
-            }
+            header { padding: 15px 20px; }
+            .container { padding: 100px 20px 40px; }
+            .hero h1 { font-size: 32px; }
+            .hero-title { font-size: 15px; gap: 5px; }
+            .hero-description { font-size: 14px; }
+            .section-title { font-size: 24px; }
+            .section-number { font-size: 12px; }
+            .stat-number { font-size: 32px; }
+            .contact-section { padding: 35px 20px; }
+            .contact-title { font-size: 22px; }
+            .logo { font-size: 16px; }
+            .lang-btn { padding: 6px 14px; font-size: 12px; }
+            section { margin-bottom: 50px; }
+            .contact-btn { padding: 12px 20px; font-size: 14px; }
+            .contact-link { padding: 14px 20px; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 26px;
-            }
-
-            .avatar-container, .avatar {
-                width: 130px;
-                height: 130px;
-            }
-
-            .avatar {
-                font-size: 55px;
-            }
+            .hero h1 { font-size: 26px; }
+            .avatar-container, .avatar { width: 130px; height: 130px; }
+            .avatar { font-size: 55px; }
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-        }
-
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--accent), var(--accent-2));
             border-radius: 4px;
         }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
     </style>
 </head>
 <body>
@@ -1333,6 +1113,7 @@
             </div>
 
             <div class="projects-grid">
+
                 <div class="project-card">
                     <div class="project-icon emoji-shake">🤖</div>
                     <div class="project-title" data-fa="ربات‌های کاربردی تلگرام و بله" data-en="Telegram & Bale Utility Bots">ربات‌های کاربردی تلگرام و بله</div>
@@ -1376,6 +1157,86 @@
                         <span class="project-tag">JavaScript</span>
                     </div>
                 </div>
+
+                <!-- ===== کارت جدید: بازی Gravity Flip Pro ===== -->
+                <a href="https://amirhosseinsefrvayek-glitch.github.io/dashgame/" target="_blank" class="project-card">
+                    <div class="project-preview">
+                        <div class="preview-game">
+                            <div class="preview-score">⚡ SCORE: 245</div>
+                            <div class="preview-obstacle"></div>
+                            <div class="preview-obstacle"></div>
+                            <div class="preview-cube" style="left: 20%; top: 30%;"></div>
+                            <div class="preview-ground"></div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <span class="project-title-text" data-fa="بازی Gravity Flip Pro" data-en="Gravity Flip Pro Game">بازی Gravity Flip Pro</span>
+                            <span class="project-arrow">→</span>
+                        </div>
+                        <div class="project-desc" data-fa="بازی پلتفرمر با مکانیک برعکس کردن جاذبه. شامل ۶ مرحله با سختی تدریجی، ۵ کاراکتر قابل انتخاب، موانع متنوع، سیستم XP و رکوردگیری. ساخته شده با HTML5 Canvas و JavaScript." data-en="Platformer game with gravity flip mechanic. Includes 6 stages with progressive difficulty, 5 selectable characters, varied obstacles, XP system and high score. Built with HTML5 Canvas and JavaScript.">بازی پلتفرمر با مکانیک برعکس کردن جاذبه. شامل ۶ مرحله با سختی تدریجی، ۵ کاراکتر قابل انتخاب، موانع متنوع، سیستم XP و رکوردگیری. ساخته شده با HTML5 Canvas و JavaScript.</div>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5 Canvas</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Game Dev</span>
+                            <span class="project-tag">2D</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== کارت جدید: LifeMap ===== -->
+                <a href="https://amirhosseinsefrvayek-glitch.github.io/lifemapsite/" target="_blank" class="project-card">
+                    <div class="project-preview">
+                        <div class="preview-lifemap">
+                            <div class="preview-lifemap-header">
+                                <div class="preview-avatar">A</div>
+                                <div class="preview-user-info">
+                                    <div class="preview-user-name">Amir</div>
+                                    <div class="preview-user-level">Level 27</div>
+                                </div>
+                                <div class="preview-streak">🔥 43</div>
+                            </div>
+                            <div class="preview-goal-row">
+                                <span class="preview-goal-icon">📚</span>
+                                <span class="preview-goal-name">یادگیری پایتون</span>
+                                <div class="preview-goal-bar">
+                                    <div class="preview-goal-fill" style="width: 72%;"></div>
+                                </div>
+                                <span class="preview-goal-pct">72%</span>
+                            </div>
+                            <div class="preview-goal-row">
+                                <span class="preview-goal-icon">💪</span>
+                                <span class="preview-goal-name">ورزش روزانه</span>
+                                <div class="preview-goal-bar">
+                                    <div class="preview-goal-fill" style="width: 41%;"></div>
+                                </div>
+                                <span class="preview-goal-pct">41%</span>
+                            </div>
+                            <div class="preview-goal-row">
+                                <span class="preview-goal-icon">💰</span>
+                                <span class="preview-goal-name">مدیریت مالی</span>
+                                <div class="preview-goal-bar">
+                                    <div class="preview-goal-fill" style="width: 63%;"></div>
+                                </div>
+                                <span class="preview-goal-pct">63%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <span class="project-title-text" data-fa="LifeMap — نقشه زندگی" data-en="LifeMap — Life Map App">LifeMap — نقشه زندگی</span>
+                            <span class="project-arrow">→</span>
+                        </div>
+                        <div class="project-desc" data-fa="اپلیکیشن مدیریت اهداف و عادت‌ها با گیمیفیکیشن کامل. شامل سیستم XP و Level، Streak روزانه، Quest و Task، دستاوردها، آمار و نمودار پیشرفت. طراحی مدرن با پشتیبانی از دارک/لایت مود و دو زبان." data-en="Goal and habit management app with full gamification. Includes XP and Level system, daily Streak, Quest and Task, achievements, stats and progress charts. Modern design with dark/light mode and bilingual support.">اپلیکیشن مدیریت اهداف و عادت‌ها با گیمیفیکیشن کامل. شامل سیستم XP و Level، Streak روزانه، Quest و Task، دستاوردها، آمار و نمودار پیشرفت. طراحی مدرن با پشتیبانی از دارک/لایت مود و دو زبان.</div>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS/JS</span>
+                            <span class="project-tag">Gamification</span>
+                            <span class="project-tag">Responsive</span>
+                            <span class="project-tag">Dark Mode</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </section>
 
@@ -1453,9 +1314,7 @@
         }
 
         const savedLang = localStorage.getItem('lang');
-        if (savedLang === 'en') {
-            setLang('en');
-        }
+        if (savedLang === 'en') { setLang('en'); }
 
         function animateCounter(el) {
             const target = parseInt(el.getAttribute('data-count'));
@@ -1487,17 +1346,13 @@
                     
                     entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
                         const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width + '%';
-                        }, 200);
+                        setTimeout(() => { bar.style.width = width + '%'; }, 200);
                     });
                 }
             });
         }, { threshold: 0.15 });
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+        document.querySelectorAll('section').forEach(section => { observer.observe(section); });
 
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
@@ -1524,16 +1379,10 @@
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particle.style.animationDelay = (Math.random() * 5) + 's';
             document.body.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 20000);
+            setTimeout(() => { particle.remove(); }, 20000);
         }
 
-        for (let i = 0; i < 8; i++) {
-            setTimeout(createParticle, i * 500);
-        }
-
+        for (let i = 0; i < 8; i++) { setTimeout(createParticle, i * 500); }
         setInterval(createParticle, 3000);
 
         document.addEventListener('click', (e) => {
@@ -1547,15 +1396,11 @@
             sparkle.style.zIndex = '9999';
             sparkle.style.transition = 'all 1s ease-out';
             document.body.appendChild(sparkle);
-            
             setTimeout(() => {
                 sparkle.style.transform = 'translateY(-50px) scale(0)';
                 sparkle.style.opacity = '0';
             }, 10);
-            
-            setTimeout(() => {
-                sparkle.remove();
-            }, 1000);
+            setTimeout(() => { sparkle.remove(); }, 1000);
         });
     </script>
 
